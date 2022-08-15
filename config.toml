@@ -1,0 +1,8 @@
+[robirt]
+groupcdtime = "19s"
+
+[sqlite3]
+file = "db"
+
+[log]
+level = "debug"

@@ -1,0 +1,16 @@
+create table groups(id integer PRIMARY KEY autoincrement, name varchar (50) not null,number integer not null UNIQUE, welcome varchar(1000));
+create table replies(id integer PRIMARY KEY autoincrement, keyword varchar (50) not null, reply varchar (1000) not null, group_id integer not null, group_number integer not null);
+CREATE INDEX keyword_idx ON replies(keyword);
+CREATE INDEX group_number_idx ON replies(group_number);
+CREATE INDEX replies_idx on replies(keyword, group_number);
+
+create table group_messages (
+id integer PRIMARY KEY autoincrement,
+msg_id integer not null,
+group_id integer not null,
+group_number integer not null,
+qq_number integer not null,
+message TEXT not null,
+time INTEGER not null
+);
+CREATE INDEX msg_idx ON group_messages(group_number, message);
